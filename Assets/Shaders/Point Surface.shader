@@ -22,7 +22,7 @@
 
 	// define ConfigureSurface method - result indicated by inout
 	void ConfigureSurface (Input input, inout SurfaceOutputStandard surface) {
-		surface.Albedo.rg = saturate(input.worldPos.xy * 0.5 + 0.5); // saturate clamps components to [0, 1]
+		surface.Albedo = saturate(input.worldPos * 0.5 + 0.5); // saturate clamps components to [0, 1]
 		surface.Smoothness = _Smoothness;
 	}
 

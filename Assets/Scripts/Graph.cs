@@ -14,24 +14,24 @@ public class Graph : MonoBehaviour
     [SerializeField, Range(10,100)] // enforces range on below variable
     private int resolution = 10;
 
+
+    [SerializeField]
+    FunctionLibrary.FunctionName function = (FunctionLibrary.FunctionName) 0;
+
     private Transform[] points;
 
     private void Awake()
     {
         float step = 2f / resolution;
         var scale = Vector3.one * step;
-        var position = Vector3.zero;
 
-        points = new Transform[resolution];
+        points = new Transform[resolution * resolution];
 
-        for (int i = 0; i < points.Length; i++)
+        for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++)
         {
             Transform point = Instantiate(pointPrefab);
-            point.SetParent(transform);
+            point.SetParent(transform, false);
 
-            position.x = (i + 0.5f) * step - 1f;
-
-            point.localPosition = position;
             point.localScale = scale;
 
             points[i] = point;
@@ -40,16 +40,25 @@ public class Graph : MonoBehaviour
 
     private void Update()
     {
+        FunctionLibrary.Function f = FunctionLibrary.GetFunction(function);
+
         float time = Time.time;
+        float step = 2f / resolution;
 
-        for (int i = 0; i < points.Length; i++)
+        float v = 0.5f * step - 1f;
+        
+        for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++)
         {
-            Transform point = points[i];
-            Vector3 position = point.localPosition;
+            if (x == resolution)
+            {
+                x = 0;
+                z += 1;
+                v = (z + 0.5f) * step - 1f;
+            }
 
-            position.y = Mathf.Sin(Mathf.PI * (position.x + time));
+            float u = (x + 0.5f) * step - 1f;
 
-            point.localPosition = position;
+            points[i].localPosition = f(u, v, time);
         }
     }
 }
