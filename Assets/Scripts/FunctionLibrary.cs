@@ -17,6 +17,17 @@ public static class FunctionLibrary
         return functions[(int)name];
     }
 
+    public static FunctionName GetNextFunctionName (FunctionName name)
+    {
+        return (int)name < functions.Length - 1 ? name + 1 : 0;
+    }
+
+    public static FunctionName GetRandomFunctionNameOtherThan (FunctionName name)
+    {
+        var choice = (FunctionName)Random.Range(0, functions.Length);
+        return choice == name ? 0 : choice;
+    }
+
     // make public to make it accessible, make static to make it work on class level
     // returns sin x-position x over time t
     public static Vector3 Wave (float u, float v, float t)
@@ -84,5 +95,10 @@ public static class FunctionLibrary
         p.z = s * Mathf.Cos(Mathf.PI * u);
 
         return p;
+    }
+
+    public static Vector3 Morph(float u, float v, float t, Function from, Function to, float progress)
+    {
+        return Vector3.LerpUnclamped(from(u, v, t), to(u, v, t), Mathf.SmoothStep(0f, 1f, progress));
     }
 }
