@@ -11,7 +11,7 @@ public class Graph : MonoBehaviour
     [SerializeField]
     private Transform pointPrefab;
 
-    [SerializeField, Range(10,100)] // enforces range on below variable
+    [SerializeField, Range(10, 200)] // enforces range on below variable
     private int resolution = 10;
 
     [SerializeField]

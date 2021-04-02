@@ -285,9 +285,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\FunctionLibrary.cs" />
+    <Compile Include="Assets\Scripts\GPUGraph.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\FunctionLibrary.compute" />
+    <None Include="Assets\Shaders\Point Surface GPU.shader" />
     <None Include="Assets\Shaders\Point Surface.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,53 @@
+﻿#pragma kernel FunctionKernel // main function
+
+// get access to compute buffer (need to Read and Write to it)
+// positions are float3 values
+RWStructuredBuffer<float3> _Positions; 
+
+uint _Resolution;
+
+// _Step = get graph step size to convert thread identifier to UV coordinates
+float _Step, _Time; 
+
+// take thread id and return UV coordinates
+float2 GetUV(uint3 id)
+{
+	return (id.xy + 0.5) * _Step - 1.0;
+
+}
+
+// sets posiiton given identifier and position to set
+void SetPosition(uint3 id, float3 position)
+{
+	if (id.x < _Resolution && id.y < _Resolution) // ensure indices don't go out of bounds if not a square grid
+	{
+		_Positions[id.x + id.y * _Resolution] = position;
+	}
+}
+
+#define PI 3.14159265358979323846 // macro to define value of PI
+
+float3 Wave(float u, float v, float t)
+{
+	float3 p;
+	p.x = u;
+	p.y = sin(PI * (u + v + t));
+	p.z = v;
+
+	return p;
+}
+
+// partitions work into groups to run independently and in parallel
+// each group consists of number of threads that perform same calculations with different input
+// specificy how manny threads each group should have with numthreads attribute above kernel function
+// 64 threads is good default, and we're processing a UV plane, so 8 x 8 x 1 makes sense
+
+// each thread identified by vector of 3 unsigned integers - access via function parameter
+// indicate parameter is for thread identifier specifically
+[numthreads(8, 8, 1)]
+void FunctionKernel(uint3 id : SV_DispatchThreadID) 
+{ 
+	float2 uv = GetUV(id);
+	SetPosition(id, Wave(id.x, id.y, _Time));
+
+}
