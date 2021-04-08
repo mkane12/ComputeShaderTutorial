@@ -14,6 +14,10 @@
 	// indicate surface shader needs to invoke a ConfigureProcedural function per vertex
 	#pragma instancing_options assumeuniformscaling procedural:ConfigureProcedural
 
+	// turn off asynchronous shading so dummy shader isn't made when doing procedural drawing
+	#pragma editor_sync_compilation
+
+
 	// minimum for shader's target level and quality
 	#pragma target 4.5
 
