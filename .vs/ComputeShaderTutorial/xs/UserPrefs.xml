@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{02E9B7CD-03B6-6DCA-B048-228F9C586229}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/FractalGPU.hlsl">
+    <Files>
+      <File FileName="Assets/Scripts/Fractal.cs" Line="174" Column="14" />
+      <File FileName="Assets/Shaders/Fractal Surface GPU.shader" Line="20" Column="1" />
+      <File FileName="Assets/Shaders/FractalGPU.hlsl" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GPUGraph.cs" Line="151" Column="18" NotebookId="1" />
+      <File FileName="Assets/Shaders/PointGPU.hlsl" Line="1" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ComputeShaderTutorial" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="836990fc-7dd7-44d7-8189-26c29665c989" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputeShaderTutorial", "ComputeShaderTutorial.csproj", "{D90C1F67-403D-C67F-1C36-898F3D3801C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{02E9B7CD-03B6-6DCA-B048-228F9C586229}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D90C1F67-403D-C67F-1C36-898F3D3801C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D90C1F67-403D-C67F-1C36-898F3D3801C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D90C1F67-403D-C67F-1C36-898F3D3801C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D90C1F67-403D-C67F-1C36-898F3D3801C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E9B7CD-03B6-6DCA-B048-228F9C586229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E9B7CD-03B6-6DCA-B048-228F9C586229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E9B7CD-03B6-6DCA-B048-228F9C586229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E9B7CD-03B6-6DCA-B048-228F9C586229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
